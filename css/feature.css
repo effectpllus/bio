@@ -1,0 +1,181 @@
+@import url(./fonts.css);
+
+:root {
+  --primary: #eb593a;
+  --primary-rgb: 235, 89, 58;
+  --border: #ffffff56;
+  --white: #fff;
+  --white-rgb: 255, 255, 255;
+  --black: #000;
+  --black-rgb: 0, 0, 0;
+
+  /* Filter color */
+  --white-f: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%)
+    hue-rotate(288deg) brightness(102%) contrast(102%);
+  --bg-f: brightness(0) saturate(100%) invert(10%) sepia(0%) saturate(45%)
+    hue-rotate(173deg) brightness(97%) contrast(99%);
+  --primary-f: brightness(0) saturate(100%) invert(38%) sepia(96%)
+    saturate(620%) hue-rotate(329deg) brightness(98%) contrast(94%);
+  --secondary-f: brightness(0) saturate(100%) invert(16%) sepia(8%)
+    saturate(274%) hue-rotate(9deg) brightness(101%) contrast(98%);
+  --third-f: brightness(0) saturate(100%) invert(67%) sepia(19%) saturate(257%)
+    hue-rotate(358deg) brightness(99%) contrast(90%);
+  --third-light-f: brightness(0) saturate(100%) invert(87%) sepia(16%)
+    saturate(211%) hue-rotate(353deg) brightness(106%) contrast(83%);
+  --third-dark-f: brightness(0) saturate(100%) invert(43%) sepia(13%)
+    saturate(465%) hue-rotate(356deg) brightness(94%) contrast(87%);
+  --third-darker-f: brightness(0) saturate(100%) invert(21%) sepia(5%)
+    saturate(1211%) hue-rotate(358deg) brightness(101%) contrast(86%);
+  --black-f: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%)
+    hue-rotate(324deg) brightness(96%) contrast(104%);
+
+  /* Font size */
+  --text-xxs: 12px;
+  --text-xs: 16px;
+  --text-sm: 18px;
+  --text-primary: 20px;
+  --text-md: 24px;
+  --text-lg: 28px;
+  --text-xl: 32px;
+  --text-xxl: 50px;
+  --text-big: 80px;
+
+  /** Font variation settings */
+
+  /* Types of dots */
+  --dots-0: "dots" 0;
+  --dots-1: "dots" 1;
+  --dots-2: "dots" 2;
+  --dots-3: "dots" 3;
+  --dots-4: "dots" 4;
+
+  /* Example */
+  /* font-variation-settings: var(--w-500), var(--dots-2); */
+  /* for (Britney font) variation setting is between 300 to 900 */
+  --w-100: "wght" 100;
+  --w-200: "wght" 200;
+  --w-300: "wght" 300;
+  --w-400: "wght" 400;
+  --w-500: "wght" 500;
+  --w-600: "wght" 600;
+  --w-700: "wght" 700;
+  --w-800: "wght" 800;
+  --w-900: "wght" 900;
+  --w-950: "wght" 950;
+  --w-1000: "wght" 1000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary: #eb593a;
+    --primary-rgb: 235, 89, 58;
+    --border: #ffffff56;
+    --white: #fff;
+    --white-rgb: 255, 255, 255;
+    --black: #000;
+    --black-rgb: 0, 0, 0;
+  }
+}
+
+*,
+:after,
+:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: IRANYekanX, tahoma;
+  font-weight: 300;
+  line-height: 1.6;
+  text-decoration: none;
+  list-style: none;
+  outline: none;
+  -webkit-user-drag: none;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark light;
+  forced-color-adjust: none;
+  -webkit-text-size-adjust: 100%;
+  -webkit-color-scheme: only light;
+}
+
+body {
+  position: relative;
+  width: 100vw;
+  height: 100%;
+  direction: rtl;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+  color: var(--white);
+  background: var(--black);
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-color-scheme: light;
+  color-scheme: light;
+}
+
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@supports (font-variation-settings: normal) {
+  *,
+  :after,
+  :before {
+    font-family: "IRANYekanXVF", tahoma;
+    font-variation-settings: "wght" 300, "dots" 2;
+    -moz-font-feature-settings: "ss02";
+    -webkit-font-feature-settings: "ss02";
+    font-feature-settings: "ss02";
+  }
+}
+
+/* Change english number to persian */
+.ss02 {
+  -moz-font-feature-settings: "ss02";
+  -webkit-font-feature-settings: "ss02";
+  font-feature-settings: "ss02";
+}
+
+/* Persian number same width */
+.ss03 {
+  -moz-font-feature-settings: "ss03";
+  -webkit-font-feature-settings: "ss03";
+  font-feature-settings: "ss03";
+}
+
+/* Other modes of Persian font words */
+.ss04 {
+  -moz-font-feature-settings: "ss04";
+  -webkit-font-feature-settings: "ss04";
+  font-feature-settings: "ss04";
+}
+
+main {
+  width: 100vw;
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,247 @@
+#bio {
+  position: relative;
+  width: 100vw;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: url(../assets/images/Sony-Camera-in-Hands.jpg) center no-repeat;
+  background-size: cover;
+  z-index: 0;
+}
+
+#bio::before {
+  content: "";
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  inset: 0;
+  background: rgba(7, 7, 7, 0.378);
+  z-index: -1;
+}
+
+/* ================ Profile ================ */
+#bio .profile {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#bio .profile .flag {
+  width: 150px;
+  height: 230px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--primary);
+  border-radius: 0 0 75px 75px;
+  -webkit-border-radius: 0 0 75px 75px;
+  -moz-border-radius: 0 0 75px 75px;
+  -ms-border-radius: 0 0 75px 75px;
+  -o-border-radius: 0 0 75px 75px;
+}
+
+#bio .profile .flag h1 {
+  font-size: 25px;
+  color: var(--white);
+  font-variation-settings: var(--w-700), var(--dots-2);
+  letter-spacing: 3px;
+  padding-top: 50px;
+}
+
+#bio .profile .flag img {
+  width: 150px;
+  height: 150px;
+  padding-bottom: 10px;
+}
+
+#bio .profile .profile_info {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  padding-top: 20px;
+}
+
+#bio .profile .profile_info p {
+  font-size: var(--text-sm);
+  font-variation-settings: var(--w-500), var(--dots-2);
+  color: var(--white);
+  text-shadow: 0px 5px 10px #000;
+}
+
+/* ================ Links ================ */
+#bio .links {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+#bio .links a {
+  direction: ltr;
+  width: 100%;
+  max-width: 450px;
+  height: 45px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  outline: none;
+  border-radius: 23px;
+  -webkit-border-radius: 23px;
+  -moz-border-radius: 23px;
+  -ms-border-radius: 23px;
+  -o-border-radius: 23px;
+  margin-bottom: 10px;
+  background: rgba(var(--white-rgb), 0.5);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(3px);
+  box-shadow: 0px 5px 10px rgba(var(--black-rgb), 0.3);
+  transition: all 0.1s ease;
+  -webkit-transition: all 0.1s ease;
+  -moz-transition: all 0.1s ease;
+  -ms-transition: all 0.1s ease;
+  -o-transition: all 0.1s ease;
+}
+
+#bio .links a:last-child {
+  margin-bottom: 0;
+}
+
+#bio .links a:hover {
+  scale: 99%;
+  background: rgba(var(--white-rgb), 0.6);
+}
+
+#bio .links a .icon {
+  width: 35px;
+  height: 35px;
+  background: rgba(var(--black-rgb), 0.25);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  margin: 0 20px 0 5px;
+}
+
+#bio .links a .icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  padding: 8px;
+  filter: var(--black-f);
+  -webkit-filter: var(--black-f);
+}
+
+#bio .links a .name {
+  width: max-content;
+  font-family: "roboto";
+  color: var(--black);
+  font-size: calc(var(--text-xs) - 1px);
+  font-weight: 600;
+}
+
+#bio .links a .info {
+  width: max-content;
+  text-align: left;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-right: 10px;
+  margin-left: auto;
+  font-size: calc(var(--text-xs) - 1px);
+  color: var(--black);
+  opacity: 0.5;
+  font-variation-settings: var(--w-500), var(--dots-2);
+}
+
+/* ================ Caption ================ */
+#bio .caption {
+  width: 90%;
+  height: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#bio .caption p {
+  text-align: center;
+  font-size: calc(var(--text-xs) - 2px);
+  font-variation-settings: var(--w-400), var(--dots-2);
+  color: var(--white);
+  text-shadow: 0px 2px 10px #000;
+}
+
+/** ================ Responsive ================ */
+
+@media screen and (min-width: 992px) {
+  #bio {
+    position: relative;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  #bio::before {
+    background: rgba(7, 7, 7, 0.473);
+  }
+  #bio .profile {
+    height: 100dvh;
+  }
+  #bio .links {
+    height: 100dvh;
+  }
+  #bio .caption {
+    position: absolute;
+    bottom: 30dvh;
+    right: 5%;
+    max-width: 45%;
+  }
+  #bio .caption p {
+    width: 70%;
+    max-width: 500px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #bio .caption {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  #bio .profile .profile_info {
+    padding-top: 30px;
+  }
+  #bio .links {
+    height: 50dvh;
+    padding: 50px 0;
+  }
+  #bio .links a {
+    height: 50px;
+    margin-bottom: 20px;
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+  }
+  #bio .links a .name,
+  #bio .links a .info {
+    font-size: var(--text-xs);
+  }
+  #bio .caption p {
+    font-size: var(--text-sm);
+  }
+  #bio .links a .icon {
+    width: 38px;
+    height: 38px;
+  }
+}
