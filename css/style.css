@@ -16,7 +16,7 @@
   width: 100vw;
   height: 100vh;
   inset: 0;
-  background: rgba(7, 7, 7, 0.378);
+  background: rgba(7, 7, 7, 0.6);
   z-index: -1;
 }
 
@@ -34,29 +34,14 @@
   width: 150px;
   height: 230px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  background: var(--primary);
-  border-radius: 0 0 75px 75px;
-  -webkit-border-radius: 0 0 75px 75px;
-  -moz-border-radius: 0 0 75px 75px;
-  -ms-border-radius: 0 0 75px 75px;
-  -o-border-radius: 0 0 75px 75px;
-}
-
-#bio .profile .flag h1 {
-  font-size: 25px;
-  color: var(--white);
-  font-variation-settings: var(--w-700), var(--dots-2);
-  letter-spacing: 3px;
-  padding-top: 50px;
+  justify-content: flex-start;
 }
 
 #bio .profile .flag img {
-  width: 150px;
-  height: 150px;
-  padding-bottom: 10px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 #bio .profile .profile_info {
@@ -76,7 +61,7 @@
 /* ================ Links ================ */
 #bio .links {
   width: 100%;
-  height: auto;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -85,15 +70,15 @@
 }
 
 #bio .links a {
-  direction: ltr;
   width: 100%;
   max-width: 450px;
-  height: 45px;
+  height: 46px;
+  direction: ltr;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  outline: none;
+  padding: 5px;
   border-radius: 23px;
   -webkit-border-radius: 23px;
   -moz-border-radius: 23px;
@@ -101,14 +86,14 @@
   -o-border-radius: 23px;
   margin-bottom: 10px;
   background: rgba(var(--white-rgb), 0.5);
-  border: 1px solid var(--border);
-  backdrop-filter: blur(3px);
   box-shadow: 0px 5px 10px rgba(var(--black-rgb), 0.3);
-  transition: all 0.1s ease;
-  -webkit-transition: all 0.1s ease;
-  -moz-transition: all 0.1s ease;
-  -ms-transition: all 0.1s ease;
-  -o-transition: all 0.1s ease;
+  border: 1px solid var(--border);
+  backdrop-filter: blur(2px);
+  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
 }
 
 #bio .links a:last-child {
@@ -121,54 +106,72 @@
 }
 
 #bio .links a .icon {
+  position: relative;
   width: 35px;
   height: 35px;
-  background: rgba(var(--black-rgb), 0.25);
-  border: 1px solid var(--border);
+  margin-right: 20px;
+  outline: 1px solid var(--border);
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
-  margin: 0 20px 0 5px;
+}
+
+#bio .links a .icon .material-icons {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 46px;
+  color: #696969a5;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
 }
 
 #bio .links a .icon img {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 38px;
+  height: 38px;
   object-fit: cover;
   padding: 8px;
-  filter: var(--black-f);
-  -webkit-filter: var(--black-f);
+  filter: var(--white-f);
+  -webkit-filter: var(--white-f);
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
 }
 
 #bio .links a .name {
   width: max-content;
   font-family: "roboto";
-  color: var(--black);
   font-size: calc(var(--text-xs) - 1px);
   font-weight: 600;
+  color: var(--black);
 }
 
 #bio .links a .info {
   width: max-content;
-  text-align: left;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
+  font-size: calc(var(--text-xs) - 1px);
+  font-variation-settings: var(--w-500), var(--dots-2);
   margin-right: 10px;
   margin-left: auto;
-  font-size: calc(var(--text-xs) - 1px);
   color: var(--black);
-  opacity: 0.5;
-  font-variation-settings: var(--w-500), var(--dots-2);
+  opacity: 0.6;
 }
 
 /* ================ Caption ================ */
 #bio .caption {
-  width: 90%;
-  height: max-content;
+  width: 100%;
+  height: fit-content;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -183,55 +186,33 @@
 
 /** ================ Responsive ================ */
 
-@media screen and (min-width: 992px) {
-  #bio {
-    position: relative;
-    flex-direction: row;
-    justify-content: flex-start;
-  }
-  #bio::before {
-    background: rgba(7, 7, 7, 0.473);
-  }
-  #bio .profile {
-    height: 100dvh;
-  }
-  #bio .links {
-    height: 100dvh;
-  }
-  #bio .caption {
-    position: absolute;
-    bottom: 30dvh;
-    right: 5%;
-    max-width: 45%;
-  }
-  #bio .caption p {
-    width: 70%;
-    max-width: 500px;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  #bio .caption {
-    width: 80%;
-  }
-}
-
 @media screen and (min-width: 480px) {
   #bio .profile .profile_info {
     padding-top: 30px;
   }
   #bio .links {
-    height: 50dvh;
     padding: 50px 0;
   }
   #bio .links a {
     height: 50px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     border-radius: 25px;
     -webkit-border-radius: 25px;
     -moz-border-radius: 25px;
     -ms-border-radius: 25px;
     -o-border-radius: 25px;
+  }
+  #bio .links a .icon {
+    width: 40px;
+    height: 40px;
+  }
+  #bio .links a .icon .material-icons {
+    font-size: 48px;
+  }
+  #bio .links a .icon img {
+    width: 35px;
+    height: 35px;
+    padding: 6px;
   }
   #bio .links a .name,
   #bio .links a .info {
@@ -240,8 +221,38 @@
   #bio .caption p {
     font-size: var(--text-sm);
   }
-  #bio .links a .icon {
-    width: 38px;
-    height: 38px;
+}
+
+@media screen and (min-width: 768px) {
+  #bio .links {
+    padding: 100px 0;
+  }
+  #bio .caption {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #bio {
+    position: relative;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  #bio .profile {
+    height: 100dvh;
+  }
+  #bio .links {
+    height: 100dvh;
+    padding: 0;
+  }
+  #bio .caption {
+    position: absolute;
+    bottom: 20dvh;
+    right: 5%;
+    max-width: 45%;
+  }
+  #bio .caption p {
+    width: 80%;
+    max-width: 500px;
   }
 }
